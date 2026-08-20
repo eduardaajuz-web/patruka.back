@@ -1,6 +1,7 @@
 {
     "professor": "Patrick",
     "materia": "Back-End",
-    "dia": "quinta"
+    "dia": "quinta" ,
+    "ordem" : 5
 
 }
