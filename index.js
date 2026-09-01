@@ -40,14 +40,14 @@ app.get("/aulas", (req, res) => {
 
 
 app.get("/horario/:dia", (req, res) => {
-    const dia = req.params.id
+    const dia = req.params.dia
     try {
-        const aulas = JSON.parse(fs.readFileSync("aulas.json", "utf8"))
-        const aula = horario.find((aula) => aula.id == id)
-        if(!aula) {
+        const aula = JSON.parse(fs.readFileSync("aulas.json", "utf8"))
+        const horario = horario.find((dia) => aula.dia == dia)
+        if(!horario) {
             return res.status(404).json({erro: "Aula não existe no BD!"})
         }
-        res.status(200).json({resposta: aula})
+        res.status(200).json({resposta: dia})
     } catch (erro) {
         res.status(500).json({erro: erro.message})
     }
