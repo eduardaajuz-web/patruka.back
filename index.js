@@ -39,11 +39,11 @@ app.get("/aulas", (req, res) => {
 })
 
 
-app.get("/aulas/:id", (req, res) => {
-    const id = req.params.id
+app.get("/horario/:dia", (req, res) => {
+    const dia = req.params.id
     try {
         const aulas = JSON.parse(fs.readFileSync("aulas.json", "utf8"))
-        const aula = aulas.find((aula) => aula.id == id)
+        const aula = horario.find((aula) => aula.id == id)
         if(!aula) {
             return res.status(404).json({erro: "Aula não existe no BD!"})
         }
